@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs"
+    ]
+  },
+  "skillOverrides": {
+    "graphify": "off",
+    "pentest-security-review": "off",
+    "supabase": "off",
+    "supabase-postgres-best-practices": "off"
+  }
+}
