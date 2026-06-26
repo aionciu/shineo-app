@@ -6,6 +6,7 @@
     "@expo-google-fonts/inter": "^0.4.2",
     "@react-native-community/netinfo": "12.0.1",
     "@supabase/supabase-js": "^2.108.2",
+    "babel-preset-expo": "~56.0.0",
     "expo": "~56.0.0",
     "expo-constants": "~56.0.18",
     "expo-dev-client": "~56.0.20",
@@ -59,7 +60,9 @@
   },
   "expo": {
     "install": {
-      "exclude": ["react"]
+      "exclude": [
+        "react"
+      ]
     }
   },
   "private": true
