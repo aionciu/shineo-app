@@ -4,9 +4,11 @@
     "slug": "shineo-app",
     "version": "1.0.0",
     "scheme": "shineo",
-    "sdkVersion": "52.0.0",
-    "platforms": ["ios", "android"],
-    "entryPoint": "expo-router/entry",
+    "sdkVersion": "56.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "plugins": [
       "expo-router",
       "expo-secure-store",
@@ -17,11 +19,15 @@
           "icon": "./assets/notification-icon.png",
           "color": "#2DC653"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.shineo.app"
+      "bundleIdentifier": "com.shineo.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.shineo.app",
@@ -29,6 +35,15 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundColor": "#2DC653"
       }
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "5f9780d2-9027-494e-aff5-badae76a1e28"
+      }
+    },
+    "owner": "minimus"
   }
 }
