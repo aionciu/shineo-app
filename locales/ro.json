@@ -1,0 +1,84 @@
+{
+  "common": {
+    "signIn": "Autentificare",
+    "continue": "Continuă",
+    "save": "Salvează",
+    "cancel": "Anulează",
+    "back": "Înapoi",
+    "loading": "Se încarcă…",
+    "error": "Ceva nu a mers bine",
+    "noInternet": "Fără conexiune la internet",
+    "updateRequired": "Actualizare necesară",
+    "updateMessage": "Vă rugăm să actualizați aplicația pentru a continua.",
+    "openAppStore": "Actualizează",
+    "openNow": "Deschis acum",
+    "closed": "Închis",
+    "distance": "{{km}} km distanță",
+    "bookAgain": "Rezervă din nou",
+    "recentlyViewed": "Vizualizate recent",
+    "newToShineo": "Nou pe Shineo",
+    "noAvailability": "Nicio disponibilitate în acest moment. Reveniți mai târziu.",
+    "slotTaken": "Acest slot a fost rezervat — vă rugăm alegeți o altă oră.",
+    "bookNow": "Rezervă acum",
+    "getDirections": "Obține indicații",
+    "call": "Sună",
+    "viewInActivity": "Vezi în Activitate",
+    "upcoming": "Viitoare",
+    "past": "Anterioare",
+    "signOut": "Deconectare",
+    "deleteAccount": "Șterge contul",
+    "deleteAccountConfirm": "Ești sigur? Această acțiune nu poate fi anulată.",
+    "myCars": "Mașinile mele",
+    "addCar": "Adaugă mașină",
+    "defaultCar": "Implicită",
+    "enableLocation": "Activează localizarea",
+    "enableLocationMessage": "Activează accesul la locație pentru a vedea spălătoriile din apropiere.",
+    "privacyPolicy": "Politica de confidențialitate",
+    "acceptPrivacyPolicy": "Accept Politica de confidențialitate",
+    "reminderNotification": "Reminder: {{service}} la {{location}} este mâine la {{time}}."
+  },
+  "screens": {
+    "signIn": {
+      "tagline": "Mașina ta, mereu curată."
+    },
+    "profileSetup": {
+      "title": "Configurați profilul",
+      "namePlaceholder": "Numele tău",
+      "phonePlaceholder": "+40...",
+      "addCarTitle": "Adaugă prima mașină (opțional)",
+      "makePlaceholder": "Marcă",
+      "modelPlaceholder": "Model",
+      "platePlaceholder": "Număr",
+      "skipCar": "Sari"
+    },
+    "home": {
+      "searchPlaceholder": "Caută spălătorii…"
+    },
+    "search": {
+      "searchPlaceholder": "Caută după nume…",
+      "filterBookable": "Cu rezervare",
+      "filterAdvertised": "Anunț",
+      "clearAll": "Șterge filtrele"
+    },
+    "booking": {
+      "selectService": "Selectează serviciu",
+      "selectDate": "Selectează data",
+      "selectTime": "Selectează ora",
+      "selectCar": "Selectează mașina (opțional)",
+      "noCar": "Nicio mașină selectată",
+      "confirm": "Confirmă rezervarea"
+    },
+    "activity": {
+      "title": "Activitate",
+      "emptyUpcoming": "Nicio rezervare viitoare.",
+      "emptyPast": "Nicio rezervare anterioară."
+    },
+    "profile": {
+      "title": "Profil",
+      "language": "Limbă",
+      "pushNotifications": "Notificări push",
+      "smsNotifications": "Notificări SMS",
+      "preferences": "Preferințe"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+export const theme = {
+  colors: {
+    primary:        '#2DC653',
+    primaryDark:    '#1F9E3E',
+    surface:        '#FFFFFF',
+    background:     '#F4F5F7',
+    textPrimary:    '#1A1A1A',
+    textSecondary:  '#6B7280',
+    border:         '#E5E7EB',
+    error:          '#EF4444',
+    success:        '#2DC653',
+  },
+  typography: {
+    screenTitle:   { fontSize: 24, fontWeight: '700' as const },
+    sectionHeader: { fontSize: 18, fontWeight: '600' as const },
+    cardTitle:     { fontSize: 16, fontWeight: '600' as const },
+    body:          { fontSize: 14, fontWeight: '400' as const },
+    caption:       { fontSize: 12, fontWeight: '400' as const },
+  },
+  spacing: {
+    0: 4,
+    1: 8,
+    2: 12,
+    3: 16,
+    4: 24,
+    5: 32,
+  },
+  radius: {
+    card:   16,
+    button: 12,
+    input:  12,
+    chip:   999,
+  },
+} as const;

@@ -1,0 +1,84 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "continue": "Continue",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "noInternet": "No internet connection",
+    "updateRequired": "Update Required",
+    "updateMessage": "Please update the app to continue.",
+    "openAppStore": "Update Now",
+    "openNow": "Open now",
+    "closed": "Closed",
+    "distance": "{{km}} km away",
+    "bookAgain": "Book Again",
+    "recentlyViewed": "Recently Viewed",
+    "newToShineo": "New to Shineo",
+    "noAvailability": "No availability at this time. Check back later.",
+    "slotTaken": "This slot was just taken — please pick another time.",
+    "bookNow": "Book Now",
+    "getDirections": "Get Directions",
+    "call": "Call",
+    "viewInActivity": "View in Activity",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "signOut": "Sign Out",
+    "deleteAccount": "Delete Account",
+    "deleteAccountConfirm": "Are you sure? This cannot be undone.",
+    "myCars": "My Cars",
+    "addCar": "Add Car",
+    "defaultCar": "Default",
+    "enableLocation": "Enable Location",
+    "enableLocationMessage": "Enable location access to see nearby car washes.",
+    "privacyPolicy": "Privacy Policy",
+    "acceptPrivacyPolicy": "I accept the Privacy Policy",
+    "reminderNotification": "Reminder: your {{service}} at {{location}} is tomorrow at {{time}}."
+  },
+  "screens": {
+    "signIn": {
+      "tagline": "Your car, always clean."
+    },
+    "profileSetup": {
+      "title": "Set Up Your Profile",
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "+40...",
+      "addCarTitle": "Add Your First Car (optional)",
+      "makePlaceholder": "Make",
+      "modelPlaceholder": "Model",
+      "platePlaceholder": "Plate",
+      "skipCar": "Skip"
+    },
+    "home": {
+      "searchPlaceholder": "Search car washes…"
+    },
+    "search": {
+      "searchPlaceholder": "Search by name…",
+      "filterBookable": "Bookable",
+      "filterAdvertised": "Advertised",
+      "clearAll": "Clear All"
+    },
+    "booking": {
+      "selectService": "Select Service",
+      "selectDate": "Select Date",
+      "selectTime": "Select Time",
+      "selectCar": "Select Car (optional)",
+      "noCar": "No car selected",
+      "confirm": "Confirm Booking"
+    },
+    "activity": {
+      "title": "Activity",
+      "emptyUpcoming": "No upcoming bookings.",
+      "emptyPast": "No past bookings."
+    },
+    "profile": {
+      "title": "Profile",
+      "language": "Language",
+      "pushNotifications": "Push Notifications",
+      "smsNotifications": "SMS Notifications",
+      "preferences": "Preferences"
+    }
+  }
+}
