@@ -12,13 +12,13 @@ import Constants from 'expo-constants';
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutInner() {
-  const { session, profile, isLoading } = useSession();
+  const { session, profile, isLoading, profileLoaded } = useSession();
   const { config, isLoading: configLoading } = useAppConfig();
 
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_600SemiBold, Inter_700Bold });
 
   useEffect(() => {
-    const lang = profile?.language ?? (ExpoLocalization.locale.startsWith('ro') ? 'ro' : 'en');
+    const lang = profile?.language ?? ((ExpoLocalization.getLocales?.()?.[0]?.languageTag ?? '').startsWith('ro') ? 'ro' : 'en');
     initI18n(lang);
   }, [profile?.language]);
 
@@ -36,7 +36,7 @@ function RootLayoutInner() {
   }
 
   if (!session) return <Redirect href="/sign-in" />;
-  if (!profile?.onboarded) return <Redirect href="/profile-setup" />;
+  if (profileLoaded && !profile?.onboarded) return <Redirect href="/profile-setup" />;
 
   return (
     <Stack screenOptions={{ headerShown: false }}>

@@ -17,6 +17,7 @@ type SessionContextValue = {
   session: Session | null;
   profile: Profile | null;
   isLoading: boolean;
+  profileLoaded: boolean;
   refreshProfile: () => Promise<void>;
 };
 
@@ -24,6 +25,7 @@ const SessionContext = createContext<SessionContextValue>({
   session: null,
   profile: null,
   isLoading: true,
+  profileLoaded: false,
   refreshProfile: async () => {},
 });
 
@@ -31,14 +33,16 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [profileLoaded, setProfileLoaded] = useState(false);
 
   async function loadProfile(userId: string) {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('profiles')
       .select('*')
       .eq('id', userId)
       .single();
-    setProfile(data ?? null);
+    if (!error) setProfile(data ?? null);
+    setProfileLoaded(true);
   }
 
   async function refreshProfile() {
@@ -62,7 +66,7 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <SessionContext.Provider value={{ session, profile, isLoading, refreshProfile }}>
+    <SessionContext.Provider value={{ session, profile, isLoading, profileLoaded, refreshProfile }}>
       {children}
     </SessionContext.Provider>
   );

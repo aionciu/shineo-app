@@ -17,12 +17,6 @@
           "icon": "./assets/notification-icon.png",
           "color": "#2DC653"
         }
-      ],
-      [
-        "@react-native-google-signin/google-signin",
-        {
-          "iosUrlScheme": "com.googleusercontent.apps.REPLACE_ME"
-        }
       ]
     ],
     "ios": {

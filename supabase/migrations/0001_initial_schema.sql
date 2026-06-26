@@ -88,10 +88,10 @@ CREATE TABLE location_slots (
 CREATE TABLE reservations (
   id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id     uuid REFERENCES auth.users,
-  location_id uuid REFERENCES locations,
-  service_id  uuid REFERENCES services,
-  slot_id     uuid REFERENCES location_slots,
-  car_id      uuid REFERENCES user_cars,
+  location_id uuid REFERENCES locations ON DELETE SET NULL,
+  service_id  uuid REFERENCES services ON DELETE SET NULL,
+  slot_id     uuid REFERENCES location_slots ON DELETE SET NULL,
+  car_id      uuid REFERENCES user_cars ON DELETE SET NULL,
   status      text DEFAULT 'confirmed',
   created_at  timestamptz DEFAULT now(),
   UNIQUE (user_id, slot_id)
@@ -104,7 +104,8 @@ CREATE TABLE reviews (
   location_id uuid REFERENCES locations ON DELETE CASCADE,
   rating      int NOT NULL CHECK (rating BETWEEN 1 AND 5),
   comment     text,
-  created_at  timestamptz DEFAULT now()
+  created_at  timestamptz DEFAULT now(),
+  UNIQUE (user_id, location_id)
 );
 
 -- push_tokens
@@ -229,3 +230,9 @@ CREATE POLICY "own reviews" ON reviews FOR INSERT WITH CHECK (user_id = auth.uid
 
 ALTER TABLE app_config ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "public read app_config" ON app_config FOR SELECT USING (true);
+
+-- Location owners can manage their own slots (needed by owner app + booking flow)
+CREATE POLICY "owner manage slots" ON location_slots
+FOR ALL USING (
+  location_id IN (SELECT id FROM locations WHERE owner_id = auth.uid())
+);
