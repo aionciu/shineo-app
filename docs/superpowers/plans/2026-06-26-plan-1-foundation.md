@@ -4,15 +4,15 @@
 
 **Goal:** Bootstrap the Expo project with Supabase, auth skeleton, i18n, design tokens, navigation shell, offline detection, and force-update gate — everything later plans build on.
 
-**Architecture:** Expo Router v3 file-based navigation with a root layout that wraps all routes in a `SessionProvider`. The root layout uses `Stack.Protected` to implement a 3-state auth guard (unauthenticated → sign-in, authenticated+not onboarded → profile-setup, authenticated+onboarded → app). Supabase session is persisted in SecureStore. Design tokens live in a single `constants/theme.ts` file. i18n is initialised once at app startup and consumed via `useTranslation()`.
+**Architecture:** Expo Router v4 file-based navigation with a root layout that wraps all routes in a `SessionProvider`. The root layout uses `Stack.Protected` to implement a 3-state auth guard (unauthenticated → sign-in, authenticated+not onboarded → profile-setup, authenticated+onboarded → app). Supabase session is persisted in SecureStore. Design tokens live in a single `constants/theme.ts` file. i18n is initialised once at app startup and consumed via `useTranslation()`.
 
-**Tech Stack:** Expo SDK 52, Expo Router v3, TypeScript, Supabase JS v2, `@supabase/supabase-js`, `expo-secure-store`, `i18next`, `react-i18next`, `expo-localization`, `@react-native-community/netinfo`, `expo-font`, `@expo-google-fonts/inter`, `expo-constants`
+**Tech Stack:** Expo SDK 56, Expo Router v4, TypeScript, Supabase JS v2, `@supabase/supabase-js`, `expo-secure-store`, `i18next`, `react-i18next`, `expo-localization`, `@react-native-community/netinfo`, `expo-font`, `@expo-google-fonts/inter`, `expo-constants`
 
 ## Global Constraints
 
-- Expo SDK: 52+, managed workflow (no bare/ejected)
+- Expo SDK: 56+, managed workflow (no bare/ejected)
 - Language: TypeScript strict mode (`"strict": true` in tsconfig)
-- Navigation: Expo Router v3 file-based only — no `react-navigation` directly
+- Navigation: Expo Router v4 file-based only — no `react-navigation` directly
 - Supabase client is a singleton imported from `lib/supabase.ts`
 - All static UI strings go through `useTranslation()` — no hardcoded English
 - Design tokens imported from `constants/theme.ts` — no inline hex colours
