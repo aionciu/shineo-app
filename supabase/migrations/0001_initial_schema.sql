@@ -1,6 +1,7 @@
 -- Enable extensions
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 CREATE EXTENSION IF NOT EXISTS postgis;
+CREATE EXTENSION IF NOT EXISTS pg_cron;
 
 -- profiles
 CREATE TABLE profiles (
@@ -129,13 +130,13 @@ INSERT INTO app_config (key, value, note) VALUES
 
 -- Trigger: update locations.rating and review_count on reviews change
 CREATE OR REPLACE FUNCTION update_location_rating()
-RETURNS TRIGGER LANGUAGE plpgsql AS $$
+RETURNS TRIGGER LANGUAGE plpgsql SECURITY DEFINER AS $$
 BEGIN
   UPDATE locations SET
     rating       = (SELECT AVG(rating)::float4 FROM reviews WHERE location_id = COALESCE(NEW.location_id, OLD.location_id)),
     review_count = (SELECT COUNT(*)::int      FROM reviews WHERE location_id = COALESCE(NEW.location_id, OLD.location_id))
   WHERE id = COALESCE(NEW.location_id, OLD.location_id);
-  RETURN NEW;
+  RETURN COALESCE(NEW, OLD);
 END;
 $$;
 
