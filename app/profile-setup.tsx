@@ -102,7 +102,10 @@ export default function ProfileSetupScreen() {
           onPress={() => setPrivacyAccepted(v => !v)}
           style={[styles.checkbox, privacyAccepted && styles.checkboxChecked]}
         />
-        <Pressable onPress={() => Linking.openURL(config['privacy_policy_url'] ?? '')}>
+        <Pressable onPress={() => {
+          const url = config['privacy_policy_url'];
+          if (url) Linking.openURL(url);
+        }}>
           <Text style={styles.privacyText}>{t('common.acceptPrivacyPolicy')}</Text>
         </Pressable>
       </View>

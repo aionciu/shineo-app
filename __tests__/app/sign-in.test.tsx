@@ -5,7 +5,7 @@ jest.mock('@react-native-google-signin/google-signin', () => ({
   GoogleSignin: {
     configure: jest.fn(),
     hasPlayServices: jest.fn().mockResolvedValue(true),
-    signIn: jest.fn().mockResolvedValue({ data: { idToken: 'test-token' } }),
+    signIn: jest.fn().mockResolvedValue({ type: 'success', data: { idToken: 'test-token' } }),
   },
   GoogleSigninButton: Object.assign(
     ({ onPress }: { onPress: () => void }) => {

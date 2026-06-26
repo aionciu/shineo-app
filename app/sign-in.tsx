@@ -17,11 +17,12 @@ export default function SignInScreen() {
     try {
       setLoading(true);
       await GoogleSignin.hasPlayServices();
-      const { data } = await GoogleSignin.signIn();
-      if (!data?.idToken) throw new Error('No ID token');
+      const result = await GoogleSignin.signIn();
+      if (result.type === 'cancelled') return;
+      if (!result.data?.idToken) throw new Error('No ID token');
       const { error } = await supabase.auth.signInWithIdToken({
         provider: 'google',
-        token: data.idToken,
+        token: result.data.idToken,
       });
       if (error) throw error;
     } catch (err: any) {
