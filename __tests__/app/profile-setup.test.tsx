@@ -33,7 +33,13 @@ jest.mock('../../hooks/useAppConfig', () => ({
   useAppConfig: () => ({ config: { privacy_policy_url: 'https://example.com/privacy' }, isLoading: false }),
 }));
 
-test('Continue button disabled without privacy policy acceptance', () => {
+beforeEach(() => {
+  mockUpsert.mockClear();
+  mockInsert.mockClear();
+  mockRefreshProfile.mockClear();
+});
+
+test('does not submit without privacy policy acceptance', () => {
   const { getByText } = render(<ProfileSetupScreen />);
   const btn = getByText('common.continue');
   expect(btn).toBeTruthy();

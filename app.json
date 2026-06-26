@@ -20,7 +20,8 @@
           "color": "#2DC653"
         }
       ],
-      "expo-localization"
+      "expo-localization",
+      "@react-native-google-signin/google-signin"
     ],
     "ios": {
       "supportsTablet": false,

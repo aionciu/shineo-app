@@ -31,11 +31,11 @@ export default function ProfileSetupScreen() {
       return;
     }
     if (!displayName.trim()) {
-      Alert.alert(t('common.error'), 'Name is required.');
+      Alert.alert(t('common.error'), t('screens.profileSetup.nameRequired'));
       return;
     }
     if (phone && !E164_REGEX.test(phone)) {
-      Alert.alert(t('common.error'), 'Phone must be in E.164 format (+40...).');
+      Alert.alert(t('common.error'), t('screens.profileSetup.phoneInvalid'));
       return;
     }
     setLoading(true);
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   buttonDisabled: { opacity: 0.6 },
   buttonText: {
     ...theme.typography.body,
-    color: '#fff',
+    color: theme.colors.onPrimary,
     fontWeight: '600',
     fontFamily: 'Inter_600SemiBold',
   },
