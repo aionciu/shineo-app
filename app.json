@@ -32,7 +32,7 @@
     "android": {
       "package": "com.shineo.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundColor": "#2DC653"
       }
     }
