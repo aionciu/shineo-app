@@ -44,7 +44,9 @@
     "profileSetup": {
       "title": "Configurați profilul",
       "namePlaceholder": "Numele tău",
+      "nameRequired": "Numele este obligatoriu.",
       "phonePlaceholder": "+40...",
+      "phoneInvalid": "Numărul trebuie să fie în format E.164 (+40...).",
       "addCarTitle": "Adaugă prima mașină (opțional)",
       "makePlaceholder": "Marcă",
       "modelPlaceholder": "Model",

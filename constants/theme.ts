@@ -9,6 +9,7 @@ export const theme = {
     border:         '#E5E7EB',
     error:          '#EF4444',
     success:        '#2DC653',
+    onPrimary:      '#FFFFFF',
   },
   typography: {
     screenTitle:   { fontSize: 24, fontWeight: '700' as const },

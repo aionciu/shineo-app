@@ -44,7 +44,9 @@
     "profileSetup": {
       "title": "Set Up Your Profile",
       "namePlaceholder": "Your name",
+      "nameRequired": "Name is required.",
       "phonePlaceholder": "+40...",
+      "phoneInvalid": "Phone must be in E.164 format (+40...).",
       "addCarTitle": "Add Your First Car (optional)",
       "makePlaceholder": "Make",
       "modelPlaceholder": "Model",
